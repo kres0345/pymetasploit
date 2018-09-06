@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 
-from httplib import HTTPConnection, HTTPSConnection
+try:
+    from httplib import HTTPConnection, HTTPSConnection
+except:
+    from http.client import HTTPConnection, HTTPSConnection
+
 import ssl
 from numbers import Number
 

@@ -3,7 +3,10 @@
 from code import InteractiveConsole
 from atexit import register
 from os import path
-import readline
+try:
+    import readline
+except:
+    import pyreadline as readline
 
 from metasploit.msfrpc import MsfRpcClient, MsfRpcError
 from metasploit.utils import parseargs
@@ -43,7 +46,7 @@ if __name__ == '__main__':
     try:
         m = MsfRpc(o.__dict__.pop('password'), **o.__dict__)
         m.interact('')
-    except MsfRpcError, m:
-        print str(m)
+    except MsfRpcError as m:
+        print(str(m))
         exit(-1)
     exit(0)
