@@ -1,3 +1,5 @@
+### Now with python-3 support
+
 PyMetasploit - a full-fledged msfrpc library for Python
 -------------------------------------------------------
 
